@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fun Arena</title>
+<title>Fun Arena - Ludo</title>
 
 <style>
 *{
@@ -14,168 +14,252 @@
 
 body{
   font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#17104f,#321b73,#101b4d);
+  background:linear-gradient(135deg,#180b4d,#32147a,#101b4d);
   color:white;
   min-height:100vh;
 }
 
+button{
+  font-family:inherit;
+  cursor:pointer;
+}
+
 .header{
-  padding:22px 16px;
   text-align:center;
+  padding:18px 10px;
   background:rgba(0,0,0,.25);
 }
 
 .logo{
-  font-size:32px;
+  font-size:28px;
   font-weight:800;
-}
-
-.subtitle{
-  margin-top:7px;
-  color:#d9d4ff;
 }
 
 .tokens{
   display:inline-block;
-  margin-top:15px;
-  padding:10px 20px;
-  border-radius:25px;
-  background:#ffbd24;
-  color:#241500;
+  margin-top:8px;
+  padding:8px 18px;
+  border-radius:20px;
+  background:#ffc928;
+  color:#251700;
   font-weight:bold;
-  font-size:18px;
 }
 
-.container{
-  max-width:900px;
+.screen{
+  max-width:600px;
   margin:auto;
-  padding:20px 15px 40px;
+  padding:18px 12px 40px;
 }
 
-.section-title{
+.home-title{
   text-align:center;
-  margin:10px 0 18px;
+  margin:10px 0 20px;
   font-size:24px;
 }
 
 .games{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+  grid-template-columns:1fr;
+  gap:14px;
 }
 
 .game-card{
   border:0;
   border-radius:22px;
-  padding:25px 12px;
-  min-height:190px;
+  padding:22px;
   color:white;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,.3);
-  transition:.2s;
+  min-height:130px;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
-.game-card:active{
-  transform:scale(.96);
-}
-
-.ludo{
-  background:linear-gradient(145deg,#ff4b4b,#a70039);
-}
-
-.snake{
-  background:linear-gradient(145deg,#22c55e,#08752e);
-}
-
-.carrom{
-  background:linear-gradient(145deg,#d99a45,#7b3f00);
+.ludo-card{
+  background:linear-gradient(135deg,#ff394d,#a90042);
 }
 
 .game-icon{
-  font-size:55px;
+  font-size:48px;
 }
 
 .game-name{
-  font-size:22px;
+  font-size:23px;
   font-weight:bold;
-  margin-top:12px;
+  margin-top:8px;
 }
 
-.game-status{
-  margin-top:7px;
-  font-size:13px;
+.game-card small{
   opacity:.9;
 }
 
-.menu{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-top:25px;
+.hidden{
+  display:none!important;
 }
 
-.menu button{
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.back{
   border:0;
-  border-radius:16px;
-  padding:18px 8px;
-  background:rgba(255,255,255,.12);
+  background:#ffffff20;
   color:white;
-  font-size:14px;
-  cursor:pointer;
+  border-radius:12px;
+  padding:10px 15px;
 }
 
-.menu-icon{
-  display:block;
-  font-size:27px;
-  margin-bottom:7px;
-}
-
-.online{
-  margin-top:25px;
-  padding:20px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#5b21b6,#2563eb);
-  text-align:center;
-}
-
-.online h2{
-  margin-bottom:8px;
-}
-
-.online p{
-  color:#ddd9ff;
-  margin-bottom:15px;
-}
-
-.play-btn{
-  border:0;
-  border-radius:25px;
-  padding:13px 30px;
-  background:#ffd32a;
-  color:#211600;
-  font-size:17px;
+.turn{
+  background:#ffffff18;
+  padding:10px 14px;
+  border-radius:12px;
   font-weight:bold;
-  cursor:pointer;
 }
 
-.footer{
+.ludo-board{
+  width:min(94vw,540px);
+  aspect-ratio:1/1;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(15,1fr);
+  grid-template-rows:repeat(15,1fr);
+  border:4px solid #171717;
+  background:white;
+  box-shadow:0 12px 30px rgba(0,0,0,.45);
+}
+
+.cell{
+  border:1px solid #777;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+}
+
+.red-zone{
+  background:#ff4d5e;
+}
+
+.green-zone{
+  background:#35d66b;
+}
+
+.yellow-zone{
+  background:#ffd84a;
+}
+
+.blue-zone{
+  background:#48a9ff;
+}
+
+.path{
+  background:#fff;
+}
+
+.safe{
+  background:#e7e7e7;
+  font-size:15px;
+}
+
+.center{
+  background:conic-gradient(
+    #ff4355 0 25%,
+    #35d66b 25% 50%,
+    #ffd83d 50% 75%,
+    #48a9ff 75% 100%
+  );
+}
+
+.home-dot{
+  width:65%;
+  height:65%;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:inset 0 0 0 3px #333;
+}
+
+.piece{
+  width:72%;
+  height:72%;
+  border-radius:50%;
+  border:2px solid #222;
+  box-shadow:0 2px 4px #555;
+}
+
+.red-piece{background:#e91d3e;}
+.green-piece{background:#16a34a;}
+.yellow-piece{background:#eab308;}
+.blue-piece{background:#1685e5;}
+
+.controls{
+  margin-top:18px;
   text-align:center;
-  padding:25px;
-  color:#aaa;
+}
+
+.dice{
+  width:80px;
+  height:80px;
+  margin:0 auto 12px;
+  background:white;
+  color:#111;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+  box-shadow:0 6px 15px #0006;
+}
+
+.roll{
+  border:0;
+  background:#ffd32a;
+  color:#241800;
+  padding:14px 30px;
+  border-radius:25px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.status{
+  margin-top:12px;
+  min-height:24px;
+  color:#ddd;
+}
+
+.players{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:15px;
+}
+
+.player{
+  padding:9px;
+  border-radius:12px;
+  text-align:center;
+  background:#ffffff14;
   font-size:13px;
 }
 
-@media(max-width:650px){
-  .games{
-    grid-template-columns:1fr;
-  }
+.active{
+  outline:2px solid #ffd32a;
+}
 
-  .game-card{
-    min-height:150px;
-  }
+.new-game{
+  margin-top:15px;
+  border:0;
+  background:#ffffff18;
+  color:white;
+  padding:11px 20px;
+  border-radius:15px;
+}
 
-  .menu{
-    grid-template-columns:repeat(2,1fr);
+@media(max-width:400px){
+  .logo{font-size:24px;}
+  .dice{
+    width:70px;
+    height:70px;
   }
 }
 </style>
@@ -185,106 +269,336 @@ body{
 
 <header class="header">
   <div class="logo">🎮 FUN ARENA</div>
-  <div class="subtitle">Ludo • Snake & Ladder • Carrom</div>
   <div class="tokens">🪙 500 Tokens</div>
 </header>
 
-<main class="container">
+<!-- HOME -->
+<section id="homeScreen" class="screen">
 
-  <h2 class="section-title">Choose Your Game</h2>
+  <h2 class="home-title">Choose Your Game</h2>
 
   <div class="games">
 
-    <button class="game-card ludo" onclick="openGame('Ludo')">
+    <button class="game-card ludo-card" onclick="startLudo()">
       <div class="game-icon">🎲</div>
       <div class="game-name">Ludo</div>
-      <div class="game-status">Play Now</div>
-    </button>
-
-    <button class="game-card snake" onclick="openGame('Snake & Ladder')">
-      <div class="game-icon">🐍</div>
-      <div class="game-name">Snake & Ladder</div>
-      <div class="game-status">Play Now</div>
-    </button>
-
-    <button class="game-card carrom" onclick="openGame('Carrom')">
-      <div class="game-icon">🎯</div>
-      <div class="game-name">Carrom</div>
-      <div class="game-status">Play Now</div>
+      <small>Offline • 2-4 Players</small>
     </button>
 
   </div>
 
-  <div class="online">
-    <h2>🌐 Online Token Battle</h2>
-    <p>Play with friends and other players</p>
-    <button class="play-btn" onclick="onlineBattle()">
-      PLAY ONLINE
-    </button>
+</section>
+
+
+<!-- LUDO -->
+<section id="ludoScreen" class="screen hidden">
+
+  <div class="topbar">
+    <button class="back" onclick="goHome()">← Home</button>
+    <div class="turn" id="turnText">🔴 Red Turn</div>
   </div>
 
-  <div class="menu">
+  <div id="board" class="ludo-board"></div>
 
-    <button onclick="showMessage('Profile')">
-      <span class="menu-icon">👤</span>
-      Profile
+  <div class="controls">
+
+    <div id="dice" class="dice">⚀</div>
+
+    <button class="roll" onclick="rollDice()">
+      🎲 ROLL DICE
     </button>
 
-    <button onclick="showMessage('Shop')">
-      <span class="menu-icon">🛒</span>
-      Shop
-    </button>
+    <div id="status" class="status">
+      Roll the dice to start!
+    </div>
 
-    <button onclick="showMessage('Daily Reward')">
-      <span class="menu-icon">🎁</span>
-      Daily Reward
-    </button>
+    <div class="players">
+      <div id="redPlayer" class="player active">🔴 Red</div>
+      <div id="greenPlayer" class="player">🟢 Green</div>
+      <div id="yellowPlayer" class="player">🟡 Yellow</div>
+      <div id="bluePlayer" class="player">🔵 Blue</div>
+    </div>
 
-    <button onclick="showMessage('Missions')">
-      <span class="menu-icon">🎯</span>
-      Missions
-    </button>
-
-    <button onclick="showMessage('Leaderboard')">
-      <span class="menu-icon">🏆</span>
-      Leaderboard
-    </button>
-
-    <button onclick="showMessage('Watch Ad')">
-      <span class="menu-icon">📺</span>
-      Watch Ad
-    </button>
-
-    <button onclick="showMessage('Settings')">
-      <span class="menu-icon">⚙️</span>
-      Settings
-    </button>
-
-    <button onclick="showMessage('Coming Soon')">
-      <span class="menu-icon">⭐</span>
-      More
+    <button class="new-game" onclick="newGame()">
+      🔄 New Game
     </button>
 
   </div>
 
-</main>
+</section>
 
-<footer class="footer">
-  © 2026 Fun Arena • Virtual Tokens Only
-</footer>
 
 <script>
 
-function openGame(game){
-  alert(game + " game — next step mein banayenge!");
+const diceFaces = ["⚀","⚁","⚂","⚃","⚄","⚅"];
+
+let currentPlayer = 0;
+let lastDice = 0;
+
+const players = [
+  {
+    name:"Red",
+    emoji:"🔴",
+    className:"red-piece",
+    position:0
+  },
+  {
+    name:"Green",
+    emoji:"🟢",
+    className:"green-piece",
+    position:0
+  },
+  {
+    name:"Yellow",
+    emoji:"🟡",
+    className:"yellow-piece",
+    position:0
+  },
+  {
+    name:"Blue",
+    emoji:"🔵",
+    className:"blue-piece",
+    position:0
+  }
+];
+
+function startLudo(){
+
+  document.getElementById("homeScreen")
+    .classList.add("hidden");
+
+  document.getElementById("ludoScreen")
+    .classList.remove("hidden");
+
+  createBoard();
+  updateTurn();
+
 }
 
-function onlineBattle(){
-  alert("Online Token Battle — next step mein banayenge!");
+function goHome(){
+
+  document.getElementById("ludoScreen")
+    .classList.add("hidden");
+
+  document.getElementById("homeScreen")
+    .classList.remove("hidden");
+
 }
 
-function showMessage(name){
-  alert(name + " — next step mein add karenge!");
+function createBoard(){
+
+  const board = document.getElementById("board");
+
+  board.innerHTML = "";
+
+  for(let row=0; row<15; row++){
+
+    for(let col=0; col<15; col++){
+
+      const cell = document.createElement("div");
+
+      cell.className = "cell";
+
+      /*
+        Four home areas
+      */
+
+      if(row < 6 && col < 6){
+        cell.classList.add("red-zone");
+      }
+
+      else if(row < 6 && col > 8){
+        cell.classList.add("green-zone");
+      }
+
+      else if(row > 8 && col < 6){
+        cell.classList.add("blue-zone");
+      }
+
+      else if(row > 8 && col > 8){
+        cell.classList.add("yellow-zone");
+      }
+
+      /*
+        Center
+      */
+
+      if(row >= 6 && row <= 8 &&
+         col >= 6 && col <= 8){
+
+        cell.className = "cell center";
+
+      }
+
+      /*
+        Main paths
+      */
+
+      if(
+        (row >= 6 && row <= 8) ||
+        (col >= 6 && col <= 8)
+      ){
+
+        cell.classList.add("path");
+
+      }
+
+      /*
+        Safe positions
+      */
+
+      if(
+        (row === 6 && col === 1) ||
+        (row === 1 && col === 8) ||
+        (row === 8 && col === 13) ||
+        (row === 13 && col === 6)
+      ){
+
+        cell.classList.add("safe");
+        cell.innerHTML = "★";
+
+      }
+
+      board.appendChild(cell);
+
+    }
+
+  }
+
+  addHomeDots();
+
+}
+
+function addHomeDots(){
+
+  const board = document.getElementById("board");
+
+  const positions = [
+    [1,1],
+    [1,4],
+    [4,1],
+    [4,4],
+
+    [1,10],
+    [1,13],
+    [4,10],
+    [4,13],
+
+    [10,1],
+    [10,4],
+    [13,1],
+    [13,4],
+
+    [10,10],
+    [10,13],
+    [13,10],
+    [13,13]
+  ];
+
+  positions.forEach((pos,index)=>{
+
+    const cell =
+      board.children[pos[0]*15 + pos[1]];
+
+    const dot =
+      document.createElement("div");
+
+    dot.className="home-dot";
+
+    cell.appendChild(dot);
+
+  });
+
+}
+
+function rollDice(){
+
+  const value =
+    Math.floor(Math.random()*6)+1;
+
+  lastDice = value;
+
+  document.getElementById("dice").textContent =
+    diceFaces[value-1];
+
+  const player = players[currentPlayer];
+
+  document.getElementById("status").textContent =
+    player.emoji+" "+player.name+
+    " rolled "+value+"!";
+
+  /*
+    Basic movement demo
+  */
+
+  player.position += value;
+
+  if(player.position >= 56){
+
+    player.position = 56;
+
+    document.getElementById("status").textContent =
+      "🏆 "+player.emoji+" "+player.name+
+      " reached the finish!";
+
+  }
+
+  /*
+    Six = another turn
+  */
+
+  if(value !== 6){
+
+    currentPlayer++;
+
+    if(currentPlayer >= players.length){
+      currentPlayer = 0;
+    }
+
+  }
+
+  updateTurn();
+
+}
+
+function updateTurn(){
+
+  const player = players[currentPlayer];
+
+  document.getElementById("turnText").textContent =
+    player.emoji+" "+player.name+" Turn";
+
+  document.querySelectorAll(".player")
+    .forEach(p=>p.classList.remove("active"));
+
+  const ids=[
+    "redPlayer",
+    "greenPlayer",
+    "yellowPlayer",
+    "bluePlayer"
+  ];
+
+  document.getElementById(ids[currentPlayer])
+    .classList.add("active");
+
+}
+
+function newGame(){
+
+  players.forEach(player=>{
+    player.position=0;
+  });
+
+  currentPlayer=0;
+  lastDice=0;
+
+  document.getElementById("dice").textContent="⚀";
+
+  document.getElementById("status").textContent=
+    "New game started! Roll the dice.";
+
+  updateTurn();
+
 }
 
 </script>
