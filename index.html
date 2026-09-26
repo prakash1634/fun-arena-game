@@ -2,1109 +2,991 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=no">
 <title>Fun Arena</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:
-      radial-gradient(circle at 20% 10%,#168cff 0%,transparent 25%),
-      radial-gradient(circle at 90% 30%,#7628ff 0%,transparent 30%),
-      linear-gradient(160deg,#061c55,#092c83,#130b4c);
-    color:white;
-    min-height:100vh;
-    padding-bottom:95px;
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  background:linear-gradient(160deg,#071b55,#063eaa,#3413a5);
+  color:white;
 }
 
 button{
-    border:0;
-    font-family:inherit;
-    color:white;
-    cursor:pointer;
+  border:0;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-.app{
-    width:100%;
-    max-width:700px;
-    margin:auto;
-    padding:10px;
+.hidden{
+  display:none!important;
 }
 
-/* TOP HEADER */
+/* HOME */
 
-.top{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:10px;
+.home{
+  max-width:620px;
+  margin:auto;
+  padding:10px;
+  padding-bottom:80px;
 }
 
 .profile{
-    flex:1;
-    min-width:0;
-    display:flex;
-    align-items:center;
-    gap:9px;
-    padding:7px;
-    border:2px solid #38bdf8;
-    border-radius:20px;
-    background:linear-gradient(135deg,#112c88,#351b88);
-    box-shadow:0 5px 20px #0008;
+  background:linear-gradient(90deg,#172078,#321c9b);
+  border:2px solid #19bfff;
+  border-radius:16px;
+  padding:8px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow:0 0 15px #008cff;
 }
 
 .avatar{
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#ffce35,#ff6b35);
-    border:3px solid #fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#ffd36a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
 }
 
 .profile-info{
-    min-width:0;
-}
-
-.profile-name{
-    font-size:17px;
-    font-weight:800;
-    white-space:nowrap;
-}
-
-.profile-id{
-    font-size:10px;
-    color:#bcd4ff;
+  flex:1;
+  font-size:13px;
 }
 
 .level{
-    display:flex;
-    align-items:center;
-    gap:5px;
-    margin-top:3px;
-    font-size:11px;
+  font-size:10px;
+  margin-top:3px;
+  color:#ddd;
 }
 
-.level-bar{
-    width:70px;
-    height:7px;
-    border-radius:10px;
-    background:#07143e;
-    overflow:hidden;
+.progress{
+  width:90px;
+  height:6px;
+  background:#222;
+  border-radius:10px;
+  overflow:hidden;
 }
 
-.level-fill{
-    width:55%;
-    height:100%;
-    background:linear-gradient(90deg,#ffd42a,#36e7ff);
-}
-
-.wallet{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
+.progress span{
+  display:block;
+  width:55%;
+  height:100%;
+  background:#28e4ff;
 }
 
 .currency{
-    min-width:100px;
-    height:35px;
-    padding:4px 7px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:5px;
-    border:2px solid #35caff;
-    border-radius:13px;
-    background:#08245f;
-    font-weight:bold;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
 }
 
-.currency-icon{
-    font-size:18px;
+.coin{
+  background:#182c9a;
+  border:1px solid #1bc7ff;
+  border-radius:12px;
+  padding:4px 8px;
+  font-size:12px;
 }
 
-.plus{
-    width:22px;
-    height:22px;
-    border-radius:7px;
-    background:#18cf55;
-    font-weight:bold;
+.top-menu{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:5px;
+  margin:8px 0;
 }
 
-/* QUICK MENU */
-
-.quick{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:7px;
-    margin:10px 0;
+.small-btn{
+  background:linear-gradient(#153a99,#071e63);
+  color:white;
+  border:1px solid #27aaff;
+  border-radius:10px;
+  padding:8px 2px;
+  font-size:9px;
 }
 
-.quick button{
-    min-height:75px;
-    padding:6px 3px;
-    border-radius:15px;
-    background:linear-gradient(145deg,#123d9a,#0b2566);
-    border:1px solid #35bfff;
-    box-shadow:0 4px 12px #0006;
-}
-
-.quick-icon{
-    display:block;
-    font-size:27px;
-    margin-bottom:5px;
-}
-
-.quick-text{
-    font-size:10px;
-    font-weight:bold;
-}
-
-/* LOGO */
-
-.logo-area{
-    text-align:center;
-    padding:8px 0 12px;
-}
-
-.logo-small{
-    font-size:16px;
-    color:#ffd62b;
-    font-weight:bold;
+.small-btn span{
+  display:block;
+  font-size:19px;
+  margin-bottom:3px;
 }
 
 .logo{
-    font-size:44px;
-    line-height:1;
-    font-weight:1000;
-    letter-spacing:1px;
-    background:linear-gradient(180deg,#fff,#4de8ff,#2274ff);
-    -webkit-background-clip:text;
-    color:transparent;
-    text-shadow:0 5px 15px #000;
+  text-align:center;
+  margin:10px 0;
 }
 
-.logo-sub{
-    display:inline-block;
-    margin-top:5px;
-    padding:5px 18px;
-    border-radius:15px;
-    background:linear-gradient(90deg,#ff334d,#ff8a00);
-    font-weight:900;
-    font-size:12px;
+.logo .welcome{
+  font-size:10px;
+  color:#ffe45c;
 }
 
-/* HERO CHARACTERS */
-
-.hero{
-    position:relative;
-    min-height:180px;
-    border-radius:25px;
-    overflow:hidden;
-    background:
-      radial-gradient(circle at 50% 50%,#3f9eff,#073b9e 65%,#061c5d);
-    border:2px solid #25caff;
-    margin-bottom:12px;
+.logo h1{
+  font-size:34px;
+  color:#26dfff;
+  text-shadow:0 0 12px #00c8ff;
 }
 
-.character{
-    position:absolute;
-    bottom:-5px;
-    font-size:105px;
-    filter:drop-shadow(0 7px 5px #0008);
+.tag{
+  display:inline-block;
+  background:#ff4c5b;
+  border-radius:15px;
+  padding:4px 15px;
+  font-size:10px;
 }
 
-.character.left{
-    left:12px;
+.game-zone{
+  margin:10px 0;
+  height:130px;
+  border:2px solid #20cfff;
+  border-radius:18px;
+  background:linear-gradient(135deg,#155fc9,#13368c);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
 }
 
-.character.right{
-    right:12px;
+.game-zone .person{
+  position:absolute;
+  bottom:-8px;
+  font-size:65px;
 }
 
-.dice{
-    position:absolute;
-    font-size:55px;
-    top:25px;
+.person.left{
+  left:20px;
 }
 
-.dice.left{
-    left:30%;
+.person.right{
+  right:20px;
 }
 
-.dice.right{
-    right:30%;
+.zone-title{
+  text-align:center;
+  z-index:2;
 }
 
-.hero-center{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
+.zone-title .dice{
+  font-size:35px;
 }
 
-.crown{
-    font-size:38px;
+.zone-title h2{
+  color:#ffd52b;
+  font-size:21px;
 }
 
-.hero-title{
-    font-size:29px;
-    font-weight:1000;
-    color:#ffd62b;
-    text-shadow:3px 4px 0 #b51d00;
-}
-
-/* PLAY MODES */
-
-.modes{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:9px;
+.mode-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
 }
 
 .mode{
-    min-height:92px;
-    padding:10px;
-    border-radius:19px;
-    box-shadow:0 6px 15px #0008;
-    border:2px solid #ffffff55;
-    text-align:left;
+  padding:14px 8px;
+  border-radius:14px;
+  color:white;
+  text-align:left;
+  border:2px solid #55aaff;
+  box-shadow:0 4px 10px #06143f;
 }
 
-.mode-icon{
-    font-size:32px;
+.mode.online{
+  background:linear-gradient(135deg,#00b95a,#00d86a);
 }
 
-.mode-title{
-    font-size:17px;
-    font-weight:900;
+.mode.friends{
+  background:linear-gradient(135deg,#1263e9,#2468ff);
 }
 
-.mode-text{
-    font-size:11px;
-    margin-top:3px;
-    opacity:.9;
+.mode.computer{
+  background:linear-gradient(135deg,#ff7900,#ff9c00);
 }
 
-.online{
-    background:linear-gradient(135deg,#00d66b,#00983e);
+.mode.pass{
+  background:linear-gradient(135deg,#7c18dc,#9c28ef);
 }
 
-.friends{
-    background:linear-gradient(135deg,#178cff,#1250e8);
+.mode b{
+  display:block;
+  font-size:13px;
 }
 
-.computer{
-    background:linear-gradient(135deg,#ffb31b,#ff5b00);
+.mode small{
+  font-size:9px;
 }
-
-.pass{
-    background:linear-gradient(135deg,#b03cff,#6516c7);
-}
-
-/* GAME CARDS */
 
 .section-title{
-    margin:17px 3px 8px;
-    font-size:19px;
-    font-weight:900;
+  margin:12px 4px 6px;
+  font-size:14px;
 }
 
 .games{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
 }
 
 .game{
-    min-height:145px;
-    border-radius:20px;
-    padding:7px;
-    overflow:hidden;
-    position:relative;
-    border:2px solid #ffd23b;
-    box-shadow:0 7px 16px #0008;
+  height:100px;
+  border-radius:16px;
+  color:white;
+  border:2px solid #ffd72b;
+  box-shadow:0 5px 10px #08123c;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 }
 
-.game-art{
-    font-size:65px;
-    display:block;
-    text-align:center;
-    margin-top:8px;
+.game .icon{
+  font-size:42px;
 }
 
-.game-name{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:8px 3px;
-    text-align:center;
-    font-size:18px;
-    font-weight:1000;
-    background:#0008;
+.game b{
+  font-size:13px;
 }
 
 .ludo{
-    background:linear-gradient(145deg,#ff304f,#9f003d);
+  background:linear-gradient(#f52e4b,#9c102b);
 }
 
 .snake{
-    background:linear-gradient(145deg,#21b75b,#08752e);
+  background:linear-gradient(#15c961,#087b38);
 }
 
 .carrom{
-    background:linear-gradient(145deg,#d48a35,#693500);
+  background:linear-gradient(#c48726,#70430d);
 }
 
-/* TOOLS */
-
-.tools{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+  margin-top:8px;
 }
 
-.tool{
-    min-height:90px;
-    padding:10px 5px;
-    border-radius:17px;
-    background:linear-gradient(145deg,#152d78,#0b1949);
-    border:1px solid #3abfff;
-    text-align:center;
+.feature{
+  height:64px;
+  background:linear-gradient(#173e94,#102a72);
+  border:1px solid #239cff;
+  border-radius:12px;
+  color:white;
+  font-size:9px;
 }
 
-.tool-icon{
-    display:block;
-    font-size:30px;
-    margin-bottom:5px;
+.feature span{
+  display:block;
+  font-size:23px;
 }
-
-.tool-name{
-    font-size:11px;
-    font-weight:bold;
-}
-
-/* REWARD */
 
 .rewards{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:9px;
-    margin-top:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+  margin-top:8px;
 }
 
 .reward{
-    min-height:100px;
-    border-radius:19px;
-    padding:12px;
-    border:2px solid #ffd329;
-    background:linear-gradient(135deg,#c82739,#6b1020);
+  padding:12px;
+  border-radius:14px;
+  border:2px solid #ffd52a;
+}
+
+.reward.daily{
+  background:linear-gradient(135deg,#d51e35,#a30d1f);
 }
 
 .reward.spin{
-    background:linear-gradient(135deg,#145de8,#6e20d5);
-}
-
-.reward-icon{
-    font-size:35px;
-}
-
-.reward-title{
-    font-size:16px;
-    font-weight:900;
+  background:linear-gradient(135deg,#6231e8,#8b20e8);
 }
 
 .reward button{
-    margin-top:8px;
-    padding:7px 13px;
-    border-radius:20px;
-    background:#ffd42a;
-    color:#261800;
-    font-weight:900;
+  margin-top:7px;
+  padding:7px 12px;
+  border-radius:15px;
+  background:#ffd52b;
 }
 
-/* BOTTOM NAV */
-
-.bottom{
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:20;
-    padding:6px 5px;
-    background:rgba(3,13,45,.97);
-    border-top:2px solid #218fff;
-    box-shadow:0 -5px 20px #0009;
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:58px;
+  background:#031338;
+  border-top:2px solid #148cff;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  max-width:620px;
+  margin:auto;
+  z-index:20;
 }
 
-.nav{
-    max-width:700px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:4px;
+.bottom-nav button{
+  background:none;
+  color:white;
+  font-size:9px;
 }
 
-.nav button{
-    background:transparent;
-    padding:6px 2px;
-    border-radius:12px;
-    font-size:10px;
-    font-weight:bold;
+.bottom-nav span{
+  display:block;
+  font-size:20px;
 }
 
-.nav button.active{
-    background:linear-gradient(135deg,#168eff,#4526d8);
-    box-shadow:0 0 12px #168eff;
+/* LUDO */
+
+.ludo-screen{
+  max-width:620px;
+  margin:auto;
+  min-height:100vh;
+  padding:10px;
+  background:linear-gradient(160deg,#071b55,#24147b);
 }
 
-.nav-icon{
-    display:block;
-    font-size:23px;
-    margin-bottom:3px;
+.ludo-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:10px;
 }
 
-/* MODAL */
-
-.modal{
-    position:fixed;
-    inset:0;
-    z-index:50;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    background:#000b;
+.back{
+  background:#18378d;
+  color:white;
+  padding:8px 13px;
+  border-radius:12px;
+  border:1px solid #38c8ff;
 }
 
-.modal.show{
-    display:flex;
+.turn{
+  background:#ffd329;
+  color:#111;
+  padding:8px 14px;
+  border-radius:15px;
+  font-size:12px;
 }
 
-.modal-box{
-    width:100%;
-    max-width:400px;
-    border-radius:25px;
-    padding:25px;
-    background:linear-gradient(145deg,#102b78,#24105d);
-    border:2px solid #32caff;
-    text-align:center;
+.board-wrap{
+  width:min(94vw,500px);
+  aspect-ratio:1;
+  margin:auto;
+  background:white;
+  padding:4px;
+  border-radius:10px;
+  box-shadow:0 0 25px #00aaff;
 }
 
-.modal-icon{
-    font-size:60px;
+.board{
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-columns:repeat(15,1fr);
+  grid-template-rows:repeat(15,1fr);
+  border:2px solid #111;
+  background:#fff;
 }
 
-.modal-title{
-    font-size:25px;
-    margin:8px 0;
+.cell{
+  border:1px solid #aaa;
+  position:relative;
 }
 
-.close{
-    margin-top:18px;
-    padding:11px 28px;
-    border-radius:22px;
-    background:#ffbd22;
-    color:#241600;
-    font-weight:bold;
+.red{
+  background:#ef334c;
 }
 
-/* MOBILE */
-
-@media(max-width:520px){
-
-    .app{
-        padding:7px;
-    }
-
-    .profile-name{
-        font-size:14px;
-    }
-
-    .avatar{
-        width:50px;
-        height:50px;
-        font-size:29px;
-    }
-
-    .currency{
-        min-width:85px;
-        font-size:12px;
-    }
-
-    .quick{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .logo{
-        font-size:38px;
-    }
-
-    .hero{
-        min-height:165px;
-    }
-
-    .character{
-        font-size:82px;
-    }
-
-    .hero-title{
-        font-size:22px;
-    }
-
-    .game{
-        min-height:125px;
-    }
-
-    .game-art{
-        font-size:53px;
-    }
-
-    .game-name{
-        font-size:15px;
-    }
-
-    .tool{
-        min-height:80px;
-    }
+.green{
+  background:#22c96b;
 }
 
-@media(max-width:360px){
+.blue{
+  background:#3498ee;
+}
 
-    .currency{
-        min-width:75px;
-    }
+.yellow{
+  background:#ffd83d;
+}
 
-    .currency-icon{
-        display:none;
-    }
+.path{
+  background:#fff;
+}
 
-    .mode-title{
-        font-size:14px;
-    }
+.center{
+  background:conic-gradient(
+    #ef334c 0 25%,
+    #22c96b 25% 50%,
+    #ffd83d 50% 75%,
+    #3498ee 75% 100%
+  );
+}
 
-    .mode-text{
-        font-size:9px;
-    }
+.home-area{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  grid-template-rows:repeat(2,1fr);
+  padding:5px;
+  gap:5px;
+}
 
-    .game-art{
-        font-size:45px;
-    }
+.home-dot{
+  background:white;
+  border-radius:50%;
+  border:2px solid #555;
+}
 
-    .nav-icon{
-        font-size:20px;
-    }
+.piece{
+  position:absolute;
+  width:70%;
+  height:70%;
+  border-radius:50%;
+  left:15%;
+  top:15%;
+  border:2px solid white;
+  box-shadow:0 2px 4px #333;
+  z-index:5;
+}
+
+.piece.red-piece{
+  background:#d71935;
+}
+
+.piece.green-piece{
+  background:#0caa4e;
+}
+
+.piece.blue-piece{
+  background:#187bd0;
+}
+
+.piece.yellow-piece{
+  background:#e9ad00;
+}
+
+.ludo-controls{
+  margin-top:12px;
+  text-align:center;
+}
+
+.dice-box{
+  width:70px;
+  height:70px;
+  background:white;
+  color:#111;
+  border-radius:15px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:40px;
+  margin:auto;
+  box-shadow:0 5px 12px #0008;
+}
+
+.roll{
+  margin-top:10px;
+  padding:13px 30px;
+  border-radius:25px;
+  background:linear-gradient(#ffd83a,#ff9d00);
+  color:#111;
+  font-size:15px;
+}
+
+.message{
+  margin-top:8px;
+  font-size:12px;
+  color:#ddd;
+}
+
+.player-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:10px;
+}
+
+.player{
+  padding:8px;
+  border-radius:10px;
+  text-align:center;
+  background:#172d77;
+  border:1px solid #338eff;
+  font-size:11px;
+}
+
+.player.active{
+  border:2px solid #ffd72b;
+  box-shadow:0 0 10px #ffd72b;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:400px){
+  .top-menu{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .logo h1{
+    font-size:29px;
+  }
+
+  .game{
+    height:90px;
+  }
+
+  .game .icon{
+    font-size:35px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="app">
+<!-- HOME SCREEN -->
+<div id="homeScreen" class="home">
 
-<!-- TOP -->
+  <div class="profile">
+    <div class="avatar">👦</div>
 
-<div class="top">
-
-    <div class="profile">
-
-        <div class="avatar">🧑🏻‍🎮</div>
-
-        <div class="profile-info">
-
-            <div class="profile-name">
-                👑 Hayoon Gaming
-            </div>
-
-            <div class="profile-id">
-                ID: 123456 🇮🇳
-            </div>
-
-            <div class="level">
-                ⭐ Lv. 5
-
-                <div class="level-bar">
-                    <div class="level-fill"></div>
-                </div>
-            </div>
-
-        </div>
-
+    <div class="profile-info">
+      <b>👑 Hayoon Gaming</b>
+      <div>🆔 123456789</div>
+      <div class="level">
+        Lv. 5
+        <div class="progress"><span></span></div>
+      </div>
     </div>
 
-    <div class="wallet">
-
-        <div class="currency">
-            <span class="currency-icon">🪙</span>
-            <span id="coinCount">500</span>
-            <button class="plus" onclick="addCoins()">+</button>
-        </div>
-
-        <div class="currency">
-            <span class="currency-icon">💎</span>
-            <span>50</span>
-            <button class="plus" onclick="showBox('💎','Gems')">+</button>
-        </div>
-
+    <div class="currency">
+      <div class="coin">🪙 500 ➕</div>
+      <div class="coin">💎 50 ➕</div>
     </div>
+  </div>
 
-</div>
+  <div class="top-menu">
+    <button class="small-btn"><span>🎁</span>Daily Login</button>
+    <button class="small-btn"><span>🏆</span>Missions</button>
+    <button class="small-btn"><span>🎡</span>Spin</button>
+    <button class="small-btn"><span>🪙</span>Free Coins</button>
+    <button class="small-btn"><span>🎁</span>Lucky Chest</button>
+    <button class="small-btn"><span>🛍️</span>Store</button>
+  </div>
 
+  <div class="logo">
+    <div class="welcome">WELCOME TO</div>
+    <h1>FUN ARENA</h1>
+    <div class="tag">PLAY • WIN • ENJOY</div>
+  </div>
 
-<!-- QUICK -->
-
-<div class="quick">
-
-    <button onclick="showBox('🎁','Daily Login')">
-        <span class="quick-icon">🎁</span>
-        <span class="quick-text">Daily Login</span>
-    </button>
-
-    <button onclick="showBox('🏆','Missions')">
-        <span class="quick-icon">🏆</span>
-        <span class="quick-text">Missions</span>
-    </button>
-
-    <button onclick="showBox('🎡','Spin')">
-        <span class="quick-icon">🎡</span>
-        <span class="quick-text">Spin</span>
-    </button>
-
-    <button onclick="watchAd()">
-        <span class="quick-icon">🪙</span>
-        <span class="quick-text">Free Coins</span>
-    </button>
-
-    <button onclick="showBox('🎁','Lucky Chest')">
-        <span class="quick-icon">🎁</span>
-        <span class="quick-text">Lucky Chest</span>
-    </button>
-
-    <button onclick="showBox('🛍️','Store')">
-        <span class="quick-icon">🛍️</span>
-        <span class="quick-text">Store</span>
-    </button>
-
-</div>
-
-
-<!-- LOGO -->
-
-<div class="logo-area">
-
-    <div class="logo-small">👑 WELCOME TO</div>
-
-    <div class="logo">
-        FUN ARENA
+  <div class="game-zone">
+    <div class="person left">👦</div>
+    <div class="zone-title">
+      <div class="dice">🎲 👑 🎲</div>
+      <h2>GAME ZONE</h2>
     </div>
+    <div class="person right">👧</div>
+  </div>
 
-    <div class="logo-sub">
-        PLAY • WIN • ENJOY
-    </div>
+  <div class="mode-grid">
 
-</div>
-
-
-<!-- HERO -->
-
-<div class="hero">
-
-    <div class="character left">🧑🏻</div>
-
-    <div class="character right">👧🏻</div>
-
-    <div class="dice left">🎲</div>
-
-    <div class="dice right">🎲</div>
-
-    <div class="hero-center">
-        <div class="crown">👑</div>
-        <div class="hero-title">GAME ZONE</div>
-    </div>
-
-</div>
-
-
-<!-- MODES -->
-
-<div class="modes">
-
-    <button class="mode online"
-            onclick="onlineMode()">
-
-        <span class="mode-icon">🌐</span>
-
-        <div class="mode-title">
-            PLAY ONLINE
-        </div>
-
-        <div class="mode-text">
-            Play Token Battle
-        </div>
-
+    <button class="mode online" onclick="alert('Online Token Battle will be added next.')">
+      🌐
+      <b>PLAY ONLINE</b>
+      <small>Play Token Battle</small>
     </button>
 
-
-    <button class="mode friends"
-            onclick="friendsMode()">
-
-        <span class="mode-icon">👥</span>
-
-        <div class="mode-title">
-            PLAY WITH FRIENDS
-        </div>
-
-        <div class="mode-text">
-            Create Room & Invite
-        </div>
-
+    <button class="mode friends" onclick="alert('Friend Room will be added next.')">
+      👥
+      <b>PLAY WITH FRIENDS</b>
+      <small>Create Room & Invite</small>
     </button>
 
-
-    <button class="mode computer"
-            onclick="showBox('🤖','Computer Mode')">
-
-        <span class="mode-icon">🤖</span>
-
-        <div class="mode-title">
-            VS COMPUTER
-        </div>
-
-        <div class="mode-text">
-            Offline Mode
-        </div>
-
+    <button class="mode computer" onclick="openLudo()">
+      🤖
+      <b>VS COMPUTER</b>
+      <small>Offline Mode</small>
     </button>
 
-
-    <button class="mode pass"
-            onclick="showBox('👨‍👩‍👧‍👦','Pass N Play')">
-
-        <span class="mode-icon">👨‍👩‍👧‍👦</span>
-
-        <div class="mode-title">
-            PASS N PLAY
-        </div>
-
-        <div class="mode-text">
-            2–4 Players
-        </div>
-
+    <button class="mode pass" onclick="openLudo()">
+      👥
+      <b>PASS N PLAY</b>
+      <small>2–4 Players</small>
     </button>
 
-</div>
+  </div>
 
+  <div class="section-title">🎮 Choose Your Game</div>
 
-<!-- GAMES -->
+  <div class="games">
 
-<div class="section-title">
-    🎮 Choose Your Game
-</div>
-
-<div class="games">
-
-    <button class="game ludo"
-            onclick="startLudo()">
-
-        <span class="game-art">🎲</span>
-
-        <div class="game-name">
-            LUDO
-        </div>
-
+    <button class="game ludo" onclick="openLudo()">
+      <div class="icon">🎲</div>
+      <b>LUDO</b>
     </button>
-
 
     <button class="game snake"
-            onclick="showBox('🐍','Snake & Ladder')">
-
-        <span class="game-art">🐍</span>
-
-        <div class="game-name">
-            SNAKE & LADDER
-        </div>
-
+            onclick="alert('Snake & Ladder coming next.')">
+      <div class="icon">🐍</div>
+      <b>SNAKE & LADDER</b>
     </button>
-
 
     <button class="game carrom"
-            onclick="showBox('🎯','Carrom')">
-
-        <span class="game-art">🎯</span>
-
-        <div class="game-name">
-            CARROM
-        </div>
-
+            onclick="alert('Carrom coming next.')">
+      <div class="icon">🎯</div>
+      <b>CARROM</b>
     </button>
 
-</div>
+  </div>
 
+  <div class="section-title">⭐ Fun Arena</div>
 
-<!-- TOOLS -->
+  <div class="features">
 
-<div class="section-title">
-    ⭐ Fun Arena
-</div>
-
-<div class="tools">
-
-    <button class="tool"
-            onclick="showBox('🏆','Tournament')">
-        <span class="tool-icon">🏆</span>
-        <span class="tool-name">TOURNAMENT</span>
+    <button class="feature">
+      <span>🏆</span>
+      TOURNAMENT
     </button>
 
-    <button class="tool"
-            onclick="showBox('🥇','Leaderboard')">
-        <span class="tool-icon">🥇</span>
-        <span class="tool-name">LEADERBOARD</span>
+    <button class="feature">
+      <span>🏅</span>
+      LEADERBOARD
     </button>
 
-    <button class="tool"
-            onclick="showBox('🎒','Inventory')">
-        <span class="tool-icon">🎒</span>
-        <span class="tool-name">INVENTORY</span>
+    <button class="feature">
+      <span>🎒</span>
+      INVENTORY
     </button>
 
-    <button class="tool"
-            onclick="showBox('👕','Skins')">
-        <span class="tool-icon">👕</span>
-        <span class="tool-name">SKINS</span>
+    <button class="feature">
+      <span>👕</span>
+      SKINS
     </button>
 
-    <button class="tool"
-            onclick="watchAd()">
-        <span class="tool-icon">📺</span>
-        <span class="tool-name">WATCH AD +100</span>
+    <button class="feature">
+      <span>📺</span>
+      WATCH AD +100
     </button>
 
-    <button class="tool"
-            onclick="showBox('🎮','More Games')">
-        <span class="tool-icon">🎮</span>
-        <span class="tool-name">MORE GAMES</span>
+    <button class="feature">
+      <span>🎮</span>
+      MORE GAMES
     </button>
 
-</div>
+  </div>
 
+  <div class="rewards">
 
-<!-- REWARDS -->
-
-<div class="rewards">
-
-    <div class="reward">
-
-        <div class="reward-icon">🎁</div>
-
-        <div class="reward-title">
-            DAILY REWARD
-        </div>
-
-        <button onclick="claimReward()">
-            CLAIM
-        </button>
-
+    <div class="reward daily">
+      🎁
+      <b>DAILY REWARD</b>
+      <br>
+      <button>CLAIM</button>
     </div>
-
 
     <div class="reward spin">
-
-        <div class="reward-icon">🎡</div>
-
-        <div class="reward-title">
-            SPIN & WIN
-        </div>
-
-        <button onclick="spinWheel()">
-            SPIN NOW
-        </button>
-
+      🎡
+      <b>SPIN & WIN</b>
+      <br>
+      <button>SPIN NOW</button>
     </div>
 
-</div>
+  </div>
 
 </div>
 
 
-<!-- BOTTOM NAV -->
+<!-- LUDO SCREEN -->
 
-<div class="bottom">
+<div id="ludoScreen" class="ludo-screen hidden">
 
-<div class="nav">
+  <div class="ludo-header">
+    <button class="back" onclick="closeLudo()">← Home</button>
+    <b>🎲 FUN ARENA LUDO</b>
+    <div id="turnText" class="turn">🔴 Red Turn</div>
+  </div>
 
-    <button class="active"
-            onclick="showBox('🏠','Home')">
-        <span class="nav-icon">🏠</span>
-        HOME
-    </button>
+  <div class="board-wrap">
 
-    <button onclick="showBox('👥','Friends')">
-        <span class="nav-icon">👥</span>
-        FRIENDS
-    </button>
+    <div class="board">
 
-    <button onclick="showBox('🛒','Shop')">
-        <span class="nav-icon">🛒</span>
-        SHOP
-    </button>
+      <!-- RED HOME -->
+      <div class="cell red home-area"
+           style="grid-column:1/7;grid-row:1/7;">
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+      </div>
 
-    <button onclick="showBox('🎉','Events')">
-        <span class="nav-icon">🎉</span>
-        EVENTS
-    </button>
+      <!-- GREEN HOME -->
+      <div class="cell green home-area"
+           style="grid-column:10/16;grid-row:1/7;">
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+      </div>
 
-    <button onclick="showBox('💬','Chat')">
-        <span class="nav-icon">💬</span>
-        CHAT
-    </button>
+      <!-- BLUE HOME -->
+      <div class="cell blue home-area"
+           style="grid-column:1/7;grid-row:10/16;">
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+      </div>
 
-    <button onclick="showBox('👤','Profile')">
-        <span class="nav-icon">👤</span>
-        PROFILE
-    </button>
+      <!-- YELLOW HOME -->
+      <div class="cell yellow home-area"
+           style="grid-column:10/16;grid-row:10/16;">
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+        <div class="home-dot"></div>
+      </div>
 
-</div>
+      <!-- CENTER -->
+      <div class="cell center"
+           style="grid-column:7/10;grid-row:7/10;"></div>
 
-</div>
+      <!-- PATH GRID -->
+      <div class="cell path" style="grid-column:7;grid-row:1;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:1;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:1;"></div>
 
+      <div class="cell path" style="grid-column:7;grid-row:2;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:2;"></div>
 
-<!-- MODAL -->
+      <div class="cell path" style="grid-column:7;grid-row:3;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:3;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:3;"></div>
 
-<div id="modal" class="modal">
+      <div class="cell path" style="grid-column:7;grid-row:4;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:4;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:4;"></div>
 
-    <div class="modal-box">
+      <div class="cell path" style="grid-column:7;grid-row:5;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:5;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:5;"></div>
 
-        <div id="modalIcon" class="modal-icon">
-            🎮
-        </div>
+      <div class="cell path" style="grid-column:7;grid-row:6;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:6;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:6;"></div>
 
-        <div id="modalTitle" class="modal-title">
-            Fun Arena
-        </div>
+      <div class="cell path" style="grid-column:1;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:2;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:3;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:4;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:5;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:6;grid-row:7;"></div>
 
-        <p id="modalText">
-            Coming soon
-        </p>
+      <div class="cell path" style="grid-column:10;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:11;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:12;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:13;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:14;grid-row:7;"></div>
+      <div class="cell path" style="grid-column:15;grid-row:7;"></div>
 
-        <button class="close"
-                onclick="closeBox()">
-            CLOSE
-        </button>
+      <div class="cell path" style="grid-column:7;grid-row:10;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:10;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:10;"></div>
+
+      <div class="cell path" style="grid-column:7;grid-row:11;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:11;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:11;"></div>
+
+      <div class="cell path" style="grid-column:7;grid-row:12;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:12;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:12;"></div>
+
+      <div class="cell path" style="grid-column:7;grid-row:13;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:13;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:13;"></div>
+
+      <div class="cell path" style="grid-column:7;grid-row:14;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:14;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:14;"></div>
+
+      <div class="cell path" style="grid-column:7;grid-row:15;"></div>
+      <div class="cell path" style="grid-column:8;grid-row:15;"></div>
+      <div class="cell path" style="grid-column:9;grid-row:15;"></div>
+
+      <!-- START CELLS -->
+      <div class="cell red" style="grid-column:6;grid-row:7;"></div>
+      <div class="cell green" style="grid-column:10;grid-row:6;"></div>
+      <div class="cell yellow" style="grid-column:10;grid-row:10;"></div>
+      <div class="cell blue" style="grid-column:6;grid-row:10;"></div>
 
     </div>
+  </div>
+
+  <div class="ludo-controls">
+
+    <div id="dice" class="dice-box">⚀</div>
+
+    <button class="roll" onclick="rollDice()">
+      🎲 ROLL DICE
+    </button>
+
+    <div id="message" class="message">
+      Red player: Roll the dice.
+    </div>
+
+  </div>
+
+  <div class="player-list">
+
+    <div id="p0" class="player active">
+      🔴 RED<br>Player 1
+    </div>
+
+    <div id="p1" class="player">
+      🟢 GREEN<br>Player 2
+    </div>
+
+    <div id="p2" class="player">
+      🟡 YELLOW<br>Player 3
+    </div>
+
+    <div id="p3" class="player">
+      🔵 BLUE<br>Player 4
+    </div>
+
+  </div>
 
 </div>
 
 
 <script>
 
-let coins = 500;
+let currentPlayer = 0;
+let rolling = false;
 
-function showBox(icon,title){
+const players = [
+  {name:"Red",emoji:"🔴"},
+  {name:"Green",emoji:"🟢"},
+  {name:"Yellow",emoji:"🟡"},
+  {name:"Blue",emoji:"🔵"}
+];
 
-    document.getElementById("modalIcon").textContent = icon;
+const diceFaces = [
+  "⚀","⚁","⚂","⚃","⚄","⚅"
+];
 
-    document.getElementById("modalTitle").textContent = title;
+function openLudo(){
 
-    document.getElementById("modalText").textContent =
-        title + " section — next version mein add karenge.";
+  document.getElementById("homeScreen")
+    .classList.add("hidden");
 
-    document.getElementById("modal").classList.add("show");
+  document.getElementById("ludoScreen")
+    .classList.remove("hidden");
+
+  window.scrollTo(0,0);
+
 }
 
-function closeBox(){
+function closeLudo(){
 
-    document.getElementById("modal")
-        .classList.remove("show");
+  document.getElementById("ludoScreen")
+    .classList.add("hidden");
+
+  document.getElementById("homeScreen")
+    .classList.remove("hidden");
+
+  window.scrollTo(0,0);
+
 }
 
-function addCoins(){
+function rollDice(){
 
-    coins += 100;
+  if(rolling) return;
 
-    document.getElementById("coinCount")
-        .textContent = coins;
+  rolling=true;
 
-    showBox("🪙","+100 Tokens");
+  const dice=document.getElementById("dice");
+  const message=document.getElementById("message");
+
+  let count=0;
+
+  const animation=setInterval(()=>{
+
+    const random=Math.floor(Math.random()*6);
+
+    dice.textContent=diceFaces[random];
+
+    count++;
+
+    if(count>=10){
+
+      clearInterval(animation);
+
+      const value=Math.floor(Math.random()*6)+1;
+
+      dice.textContent=diceFaces[value-1];
+
+      message.textContent=
+        players[currentPlayer].emoji+" "+
+        players[currentPlayer].name+
+        " rolled "+value+"!";
+
+      rolling=false;
+
+      if(value!==6){
+
+        setTimeout(nextTurn,900);
+
+      }else{
+
+        message.textContent +=
+          " 🎉 Roll again!";
+
+      }
+
+    }
+
+  },100);
+
 }
 
-function watchAd(){
+function nextTurn(){
 
-    /*
-      Development demo:
-      Real rewarded advertisement baad mein
-      Ad network ke through connect karenge.
-    */
+  currentPlayer++;
 
-    coins += 100;
+  if(currentPlayer>=players.length){
+    currentPlayer=0;
+  }
 
-    document.getElementById("coinCount")
-        .textContent = coins;
+  document.querySelectorAll(".player")
+    .forEach(p=>p.classList.remove("active"));
 
-    showBox("📺","Rewarded Ad");
-}
+  document.getElementById("p"+currentPlayer)
+    .classList.add("active");
 
-function claimReward(){
+  const p=players[currentPlayer];
 
-    coins += 100;
+  document.getElementById("turnText")
+    .textContent=p.emoji+" "+p.name+" Turn";
 
-    document.getElementById("coinCount")
-        .textContent = coins;
+  document.getElementById("message")
+    .textContent=
+    p.emoji+" "+p.name+
+    " player: Roll the dice.";
 
-    showBox("🎁","Daily Reward");
-}
-
-function spinWheel(){
-
-    const rewards = [50,100,150,200,250];
-
-    const reward =
-        rewards[Math.floor(Math.random()*rewards.length)];
-
-    coins += reward;
-
-    document.getElementById("coinCount")
-        .textContent = coins;
-
-    showBox("🎡","You won "+reward+" Tokens!");
-}
-
-function onlineMode(){
-
-    showBox(
-        "🌐",
-        "Online Token Battle"
-    );
-}
-
-function friendsMode(){
-
-    showBox(
-        "👥",
-        "Friends / Private Room"
-    );
-}
-
-function startLudo(){
-
-    showBox(
-        "🎲",
-        "Ludo"
-    );
 }
 
 </script>
 
 </body>
-  </html>
+                              </html>
