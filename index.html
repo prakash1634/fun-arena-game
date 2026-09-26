@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun Arena</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#17104f,#321b73,#101b4d);
+  color:white;
+  min-height:100vh;
+}
+
+.header{
+  padding:22px 16px;
+  text-align:center;
+  background:rgba(0,0,0,.25);
+}
+
+.logo{
+  font-size:32px;
+  font-weight:800;
+}
+
+.subtitle{
+  margin-top:7px;
+  color:#d9d4ff;
+}
+
+.tokens{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  border-radius:25px;
+  background:#ffbd24;
+  color:#241500;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px 15px 40px;
+}
+
+.section-title{
+  text-align:center;
+  margin:10px 0 18px;
+  font-size:24px;
+}
+
+.games{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.game-card{
+  border:0;
+  border-radius:22px;
+  padding:25px 12px;
+  min-height:190px;
+  color:white;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  transition:.2s;
+}
+
+.game-card:active{
+  transform:scale(.96);
+}
+
+.ludo{
+  background:linear-gradient(145deg,#ff4b4b,#a70039);
+}
+
+.snake{
+  background:linear-gradient(145deg,#22c55e,#08752e);
+}
+
+.carrom{
+  background:linear-gradient(145deg,#d99a45,#7b3f00);
+}
+
+.game-icon{
+  font-size:55px;
+}
+
+.game-name{
+  font-size:22px;
+  font-weight:bold;
+  margin-top:12px;
+}
+
+.game-status{
+  margin-top:7px;
+  font-size:13px;
+  opacity:.9;
+}
+
+.menu{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:25px;
+}
+
+.menu button{
+  border:0;
+  border-radius:16px;
+  padding:18px 8px;
+  background:rgba(255,255,255,.12);
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.menu-icon{
+  display:block;
+  font-size:27px;
+  margin-bottom:7px;
+}
+
+.online{
+  margin-top:25px;
+  padding:20px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#5b21b6,#2563eb);
+  text-align:center;
+}
+
+.online h2{
+  margin-bottom:8px;
+}
+
+.online p{
+  color:#ddd9ff;
+  margin-bottom:15px;
+}
+
+.play-btn{
+  border:0;
+  border-radius:25px;
+  padding:13px 30px;
+  background:#ffd32a;
+  color:#211600;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.footer{
+  text-align:center;
+  padding:25px;
+  color:#aaa;
+  font-size:13px;
+}
+
+@media(max-width:650px){
+  .games{
+    grid-template-columns:1fr;
+  }
+
+  .game-card{
+    min-height:150px;
+  }
+
+  .menu{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">🎮 FUN ARENA</div>
+  <div class="subtitle">Ludo • Snake & Ladder • Carrom</div>
+  <div class="tokens">🪙 500 Tokens</div>
+</header>
+
+<main class="container">
+
+  <h2 class="section-title">Choose Your Game</h2>
+
+  <div class="games">
+
+    <button class="game-card ludo" onclick="openGame('Ludo')">
+      <div class="game-icon">🎲</div>
+      <div class="game-name">Ludo</div>
+      <div class="game-status">Play Now</div>
+    </button>
+
+    <button class="game-card snake" onclick="openGame('Snake & Ladder')">
+      <div class="game-icon">🐍</div>
+      <div class="game-name">Snake & Ladder</div>
+      <div class="game-status">Play Now</div>
+    </button>
+
+    <button class="game-card carrom" onclick="openGame('Carrom')">
+      <div class="game-icon">🎯</div>
+      <div class="game-name">Carrom</div>
+      <div class="game-status">Play Now</div>
+    </button>
+
+  </div>
+
+  <div class="online">
+    <h2>🌐 Online Token Battle</h2>
+    <p>Play with friends and other players</p>
+    <button class="play-btn" onclick="onlineBattle()">
+      PLAY ONLINE
+    </button>
+  </div>
+
+  <div class="menu">
+
+    <button onclick="showMessage('Profile')">
+      <span class="menu-icon">👤</span>
+      Profile
+    </button>
+
+    <button onclick="showMessage('Shop')">
+      <span class="menu-icon">🛒</span>
+      Shop
+    </button>
+
+    <button onclick="showMessage('Daily Reward')">
+      <span class="menu-icon">🎁</span>
+      Daily Reward
+    </button>
+
+    <button onclick="showMessage('Missions')">
+      <span class="menu-icon">🎯</span>
+      Missions
+    </button>
+
+    <button onclick="showMessage('Leaderboard')">
+      <span class="menu-icon">🏆</span>
+      Leaderboard
+    </button>
+
+    <button onclick="showMessage('Watch Ad')">
+      <span class="menu-icon">📺</span>
+      Watch Ad
+    </button>
+
+    <button onclick="showMessage('Settings')">
+      <span class="menu-icon">⚙️</span>
+      Settings
+    </button>
+
+    <button onclick="showMessage('Coming Soon')">
+      <span class="menu-icon">⭐</span>
+      More
+    </button>
+
+  </div>
+
+</main>
+
+<footer class="footer">
+  © 2026 Fun Arena • Virtual Tokens Only
+</footer>
+
+<script>
+
+function openGame(game){
+  alert(game + " game — next step mein banayenge!");
+}
+
+function onlineBattle(){
+  alert("Online Token Battle — next step mein banayenge!");
+}
+
+function showMessage(name){
+  alert(name + " — next step mein add karenge!");
+}
+
+</script>
+
+</body>
+</html>
