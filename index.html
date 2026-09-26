@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <title>Fun Arena</title>
 
 <style>
@@ -16,7 +15,7 @@
 body{
   font-family:Arial,sans-serif;
   min-height:100vh;
-  background:linear-gradient(160deg,#071b55,#063eaa,#3413a5);
+  background:linear-gradient(160deg,#06194f,#083da8,#35139d);
   color:white;
 }
 
@@ -30,23 +29,22 @@ button{
   display:none!important;
 }
 
-/* HOME */
+/* ================= HOME ================= */
 
 .home{
   max-width:620px;
   margin:auto;
-  padding:10px;
-  padding-bottom:80px;
+  padding:10px 10px 75px;
 }
 
 .profile{
-  background:linear-gradient(90deg,#172078,#321c9b);
-  border:2px solid #19bfff;
+  background:linear-gradient(90deg,#19227e,#35189b);
+  border:2px solid #16c8ff;
   border-radius:16px;
   padding:8px;
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:9px;
   box-shadow:0 0 15px #008cff;
 }
 
@@ -58,24 +56,23 @@ button{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:30px;
+  font-size:29px;
 }
 
 .profile-info{
   flex:1;
-  font-size:13px;
+  font-size:12px;
 }
 
-.level{
-  font-size:10px;
-  margin-top:3px;
+.profile-info small{
   color:#ddd;
 }
 
 .progress{
-  width:90px;
+  width:95px;
   height:6px;
-  background:#222;
+  margin-top:3px;
+  background:#111;
   border-radius:10px;
   overflow:hidden;
 }
@@ -84,7 +81,7 @@ button{
   display:block;
   width:55%;
   height:100%;
-  background:#28e4ff;
+  background:#24ddff;
 }
 
 .currency{
@@ -94,11 +91,11 @@ button{
 }
 
 .coin{
-  background:#182c9a;
-  border:1px solid #1bc7ff;
+  background:#172e99;
+  border:1px solid #19c8ff;
   border-radius:12px;
   padding:4px 8px;
-  font-size:12px;
+  font-size:11px;
 }
 
 .top-menu{
@@ -109,17 +106,17 @@ button{
 }
 
 .small-btn{
-  background:linear-gradient(#153a99,#071e63);
+  background:linear-gradient(#17419d,#071d61);
   color:white;
-  border:1px solid #27aaff;
+  border:1px solid #2baeff;
   border-radius:10px;
-  padding:8px 2px;
-  font-size:9px;
+  padding:7px 2px;
+  font-size:8px;
 }
 
 .small-btn span{
   display:block;
-  font-size:19px;
+  font-size:18px;
   margin-bottom:3px;
 }
 
@@ -129,22 +126,22 @@ button{
 }
 
 .logo .welcome{
-  font-size:10px;
   color:#ffe45c;
+  font-size:10px;
 }
 
 .logo h1{
   font-size:34px;
-  color:#26dfff;
-  text-shadow:0 0 12px #00c8ff;
+  color:#28dcff;
+  text-shadow:0 0 12px #00bfff;
 }
 
 .tag{
   display:inline-block;
   background:#ff4c5b;
   border-radius:15px;
-  padding:4px 15px;
-  font-size:10px;
+  padding:4px 14px;
+  font-size:9px;
 }
 
 .game-zone{
@@ -152,7 +149,7 @@ button{
   height:130px;
   border:2px solid #20cfff;
   border-radius:18px;
-  background:linear-gradient(135deg,#155fc9,#13368c);
+  background:linear-gradient(135deg,#1765d2,#12368c);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -160,18 +157,18 @@ button{
   overflow:hidden;
 }
 
-.game-zone .person{
+.person{
   position:absolute;
-  bottom:-8px;
-  font-size:65px;
+  bottom:-7px;
+  font-size:64px;
 }
 
 .person.left{
-  left:20px;
+  left:18px;
 }
 
 .person.right{
-  right:20px;
+  right:18px;
 }
 
 .zone-title{
@@ -180,11 +177,11 @@ button{
 }
 
 .zone-title .dice{
-  font-size:35px;
+  font-size:34px;
 }
 
 .zone-title h2{
-  color:#ffd52b;
+  color:#ffd42c;
   font-size:21px;
 }
 
@@ -195,7 +192,7 @@ button{
 }
 
 .mode{
-  padding:14px 8px;
+  padding:13px 8px;
   border-radius:14px;
   color:white;
   text-align:left;
@@ -221,11 +218,11 @@ button{
 
 .mode b{
   display:block;
-  font-size:13px;
+  font-size:12px;
 }
 
 .mode small{
-  font-size:9px;
+  font-size:8px;
 }
 
 .section-title{
@@ -252,11 +249,11 @@ button{
 }
 
 .game .icon{
-  font-size:42px;
+  font-size:40px;
 }
 
 .game b{
-  font-size:13px;
+  font-size:12px;
 }
 
 .ludo{
@@ -284,12 +281,12 @@ button{
   border:1px solid #239cff;
   border-radius:12px;
   color:white;
-  font-size:9px;
+  font-size:8px;
 }
 
 .feature span{
   display:block;
-  font-size:23px;
+  font-size:22px;
 }
 
 .rewards{
@@ -303,6 +300,7 @@ button{
   padding:12px;
   border-radius:14px;
   border:2px solid #ffd52a;
+  font-size:11px;
 }
 
 .reward.daily{
@@ -332,60 +330,68 @@ button{
   grid-template-columns:repeat(5,1fr);
   max-width:620px;
   margin:auto;
-  z-index:20;
+  z-index:50;
 }
 
 .bottom-nav button{
   background:none;
   color:white;
-  font-size:9px;
+  font-size:8px;
 }
 
 .bottom-nav span{
   display:block;
-  font-size:20px;
+  font-size:19px;
 }
 
-/* LUDO */
+/* ================= LUDO ================= */
 
 .ludo-screen{
   max-width:620px;
   margin:auto;
   min-height:100vh;
-  padding:10px;
-  background:linear-gradient(160deg,#071b55,#24147b);
+  padding:9px 8px 20px;
+  background:linear-gradient(160deg,#06194f,#24147b);
 }
 
 .ludo-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin-bottom:10px;
+  gap:5px;
+  margin-bottom:8px;
 }
 
 .back{
   background:#18378d;
   color:white;
-  padding:8px 13px;
+  padding:8px 11px;
   border-radius:12px;
   border:1px solid #38c8ff;
+}
+
+.ludo-title{
+  font-size:13px;
 }
 
 .turn{
   background:#ffd329;
   color:#111;
-  padding:8px 14px;
+  padding:7px 9px;
   border-radius:15px;
-  font-size:12px;
+  font-size:10px;
+  white-space:nowrap;
 }
 
+/* BOARD */
+
 .board-wrap{
-  width:min(94vw,500px);
+  width:min(96vw,520px);
   aspect-ratio:1;
   margin:auto;
-  background:white;
+  background:#111;
   padding:4px;
-  border-radius:10px;
+  border-radius:12px;
   box-shadow:0 0 25px #00aaff;
 }
 
@@ -395,8 +401,9 @@ button{
   display:grid;
   grid-template-columns:repeat(15,1fr);
   grid-template-rows:repeat(15,1fr);
+  background:white;
   border:2px solid #111;
-  background:#fff;
+  position:relative;
 }
 
 .cell{
@@ -404,125 +411,212 @@ button{
   position:relative;
 }
 
-.red{
-  background:#ef334c;
+.home{
+  position:absolute;
+  width:40%;
+  height:40%;
+  z-index:1;
+  padding:5%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:10%;
 }
 
-.green{
-  background:#22c96b;
+.home.red-home{
+  top:0;
+  left:0;
+  background:#ed3049;
 }
 
-.blue{
-  background:#3498ee;
+.home.green-home{
+  top:0;
+  right:0;
+  background:#20c867;
 }
 
-.yellow{
-  background:#ffd83d;
+.home.blue-home{
+  bottom:0;
+  left:0;
+  background:#2998ed;
+}
+
+.home.yellow-home{
+  bottom:0;
+  right:0;
+  background:#ffd633;
+}
+
+.home-slot{
+  background:white;
+  border:2px solid #777;
+  border-radius:50%;
+  position:relative;
 }
 
 .path{
   background:#fff;
 }
 
+.red-path{
+  background:#ffdfe3;
+}
+
+.green-path{
+  background:#dcffe9;
+}
+
+.blue-path{
+  background:#dcefff;
+}
+
+.yellow-path{
+  background:#fff4c9;
+}
+
+.safe{
+  background:#fff!important;
+}
+
+.safe:after{
+  content:"★";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:#777;
+  font-size:12px;
+}
+
+.lane-red{
+  background:#ed3049;
+}
+
+.lane-green{
+  background:#20c867;
+}
+
+.lane-blue{
+  background:#2998ed;
+}
+
+.lane-yellow{
+  background:#ffd633;
+}
+
 .center{
   background:conic-gradient(
-    #ef334c 0 25%,
-    #22c96b 25% 50%,
-    #ffd83d 50% 75%,
-    #3498ee 75% 100%
+    #ed3049 0 25%,
+    #20c867 25% 50%,
+    #ffd633 50% 75%,
+    #2998ed 75% 100%
   );
-}
-
-.home-area{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  grid-template-rows:repeat(2,1fr);
-  padding:5px;
-  gap:5px;
-}
-
-.home-dot{
-  background:white;
-  border-radius:50%;
-  border:2px solid #555;
+  border:2px solid #222;
 }
 
 .piece{
+  width:82%;
+  height:82%;
   position:absolute;
-  width:70%;
-  height:70%;
+  left:9%;
+  top:9%;
   border-radius:50%;
-  left:15%;
-  top:15%;
   border:2px solid white;
-  box-shadow:0 2px 4px #333;
-  z-index:5;
+  box-shadow:0 2px 5px #222;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:8px;
+  color:white;
+  transition:transform .15s;
 }
 
 .piece.red-piece{
-  background:#d71935;
+  background:#d81836;
 }
 
 .piece.green-piece{
-  background:#0caa4e;
+  background:#0aa94d;
 }
 
 .piece.blue-piece{
-  background:#187bd0;
+  background:#1378ce;
 }
 
 .piece.yellow-piece{
-  background:#e9ad00;
+  background:#e5a900;
 }
 
+.piece.selectable{
+  animation:pulse .7s infinite alternate;
+  box-shadow:0 0 10px 3px white;
+}
+
+@keyframes pulse{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(1.18);
+  }
+}
+
+/* CONTROLS */
+
 .ludo-controls{
-  margin-top:12px;
+  margin-top:9px;
   text-align:center;
 }
 
 .dice-box{
-  width:70px;
-  height:70px;
+  width:62px;
+  height:62px;
   background:white;
   color:#111;
-  border-radius:15px;
+  border-radius:14px;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:40px;
+  font-size:37px;
   margin:auto;
   box-shadow:0 5px 12px #0008;
 }
 
 .roll{
-  margin-top:10px;
-  padding:13px 30px;
+  margin-top:8px;
+  padding:12px 27px;
   border-radius:25px;
   background:linear-gradient(#ffd83a,#ff9d00);
   color:#111;
-  font-size:15px;
+  font-size:14px;
+}
+
+.roll:disabled{
+  opacity:.5;
 }
 
 .message{
-  margin-top:8px;
-  font-size:12px;
-  color:#ddd;
+  margin-top:7px;
+  min-height:18px;
+  font-size:11px;
+  color:#eee;
 }
 
 .player-list{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:6px;
-  margin-top:10px;
+  margin-top:8px;
 }
 
 .player{
-  padding:8px;
+  padding:7px;
   border-radius:10px;
   text-align:center;
   background:#172d77;
   border:1px solid #338eff;
-  font-size:11px;
+  font-size:10px;
 }
 
 .player.active{
@@ -530,9 +624,49 @@ button{
   box-shadow:0 0 10px #ffd72b;
 }
 
-/* RESPONSIVE */
+/* WINNER */
+
+.winner-box{
+  position:fixed;
+  inset:0;
+  background:#000b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+}
+
+.winner-card{
+  width:85%;
+  max-width:350px;
+  background:linear-gradient(160deg,#17277e,#5718a5);
+  border:3px solid #ffd42c;
+  border-radius:22px;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 0 30px #ffd42c;
+}
+
+.winner-card .big{
+  font-size:55px;
+}
+
+.winner-card h2{
+  color:#ffd42c;
+  margin:8px 0;
+}
+
+.winner-card button{
+  margin-top:15px;
+  background:#ffd42c;
+  padding:12px 25px;
+  border-radius:25px;
+}
+
+/* MOBILE */
 
 @media(max-width:400px){
+
   .top-menu{
     grid-template-columns:repeat(3,1fr);
   }
@@ -542,11 +676,19 @@ button{
   }
 
   .game{
-    height:90px;
+    height:88px;
   }
 
   .game .icon{
-    font-size:35px;
+    font-size:34px;
+  }
+
+  .ludo-title{
+    font-size:11px;
+  }
+
+  .turn{
+    font-size:9px;
   }
 }
 </style>
@@ -554,18 +696,21 @@ button{
 
 <body>
 
-<!-- HOME SCREEN -->
+<!-- ================= HOME ================= -->
+
 <div id="homeScreen" class="home">
 
   <div class="profile">
+
     <div class="avatar">👦</div>
 
     <div class="profile-info">
       <b>👑 Hayoon Gaming</b>
-      <div>🆔 123456789</div>
-      <div class="level">
-        Lv. 5
-        <div class="progress"><span></span></div>
+      <div><small>🆔 123456789</small></div>
+      <div><small>Lv. 5</small></div>
+
+      <div class="progress">
+        <span></span>
       </div>
     </div>
 
@@ -573,84 +718,137 @@ button{
       <div class="coin">🪙 500 ➕</div>
       <div class="coin">💎 50 ➕</div>
     </div>
+
   </div>
 
   <div class="top-menu">
-    <button class="small-btn"><span>🎁</span>Daily Login</button>
-    <button class="small-btn"><span>🏆</span>Missions</button>
-    <button class="small-btn"><span>🎡</span>Spin</button>
-    <button class="small-btn"><span>🪙</span>Free Coins</button>
-    <button class="small-btn"><span>🎁</span>Lucky Chest</button>
-    <button class="small-btn"><span>🛍️</span>Store</button>
+
+    <button class="small-btn">
+      <span>🎁</span>Daily Login
+    </button>
+
+    <button class="small-btn">
+      <span>🏆</span>Missions
+    </button>
+
+    <button class="small-btn">
+      <span>🎡</span>Spin
+    </button>
+
+    <button class="small-btn">
+      <span>🪙</span>Free Coins
+    </button>
+
+    <button class="small-btn">
+      <span>🎁</span>Lucky Chest
+    </button>
+
+    <button class="small-btn">
+      <span>🛍️</span>Store
+    </button>
+
   </div>
 
   <div class="logo">
+
     <div class="welcome">WELCOME TO</div>
+
     <h1>FUN ARENA</h1>
-    <div class="tag">PLAY • WIN • ENJOY</div>
+
+    <div class="tag">
+      PLAY • WIN • ENJOY
+    </div>
+
   </div>
 
   <div class="game-zone">
+
     <div class="person left">👦</div>
+
     <div class="zone-title">
       <div class="dice">🎲 👑 🎲</div>
       <h2>GAME ZONE</h2>
     </div>
+
     <div class="person right">👧</div>
+
   </div>
 
   <div class="mode-grid">
 
-    <button class="mode online" onclick="alert('Online Token Battle will be added next.')">
+    <button class="mode online"
+            onclick="alert('Online Token Battle will be added later.')">
+
       🌐
       <b>PLAY ONLINE</b>
       <small>Play Token Battle</small>
+
     </button>
 
-    <button class="mode friends" onclick="alert('Friend Room will be added next.')">
+    <button class="mode friends"
+            onclick="alert('Friend Room will be added later.')">
+
       👥
       <b>PLAY WITH FRIENDS</b>
       <small>Create Room & Invite</small>
+
     </button>
 
-    <button class="mode computer" onclick="openLudo()">
+    <button class="mode computer"
+            onclick="startLudo()">
+
       🤖
       <b>VS COMPUTER</b>
       <small>Offline Mode</small>
+
     </button>
 
-    <button class="mode pass" onclick="openLudo()">
+    <button class="mode pass"
+            onclick="startLudo()">
+
       👥
       <b>PASS N PLAY</b>
       <small>2–4 Players</small>
+
     </button>
 
   </div>
 
-  <div class="section-title">🎮 Choose Your Game</div>
+  <div class="section-title">
+    🎮 Choose Your Game
+  </div>
 
   <div class="games">
 
-    <button class="game ludo" onclick="openLudo()">
+    <button class="game ludo"
+            onclick="startLudo()">
+
       <div class="icon">🎲</div>
       <b>LUDO</b>
+
     </button>
 
     <button class="game snake"
-            onclick="alert('Snake & Ladder coming next.')">
+            onclick="alert('Snake & Ladder will be added next.')">
+
       <div class="icon">🐍</div>
       <b>SNAKE & LADDER</b>
+
     </button>
 
     <button class="game carrom"
-            onclick="alert('Carrom coming next.')">
+            onclick="alert('Carrom will be added next.')">
+
       <div class="icon">🎯</div>
       <b>CARROM</b>
+
     </button>
 
   </div>
 
-  <div class="section-title">⭐ Fun Arena</div>
+  <div class="section-title">
+    ⭐ Fun Arena
+  </div>
 
   <div class="features">
 
@@ -689,15 +887,13 @@ button{
   <div class="rewards">
 
     <div class="reward daily">
-      🎁
-      <b>DAILY REWARD</b>
+      🎁 <b>DAILY REWARD</b>
       <br>
       <button>CLAIM</button>
     </div>
 
     <div class="reward spin">
-      🎡
-      <b>SPIN & WIN</b>
+      🎡 <b>SPIN & WIN</b>
       <br>
       <button>SPIN NOW</button>
     </div>
@@ -707,162 +903,147 @@ button{
 </div>
 
 
-<!-- LUDO SCREEN -->
+<!-- ================= LUDO ================= -->
 
-<div id="ludoScreen" class="ludo-screen hidden">
+<div id="ludoScreen"
+     class="ludo-screen hidden">
 
   <div class="ludo-header">
-    <button class="back" onclick="closeLudo()">← Home</button>
-    <b>🎲 FUN ARENA LUDO</b>
-    <div id="turnText" class="turn">🔴 Red Turn</div>
+
+    <button class="back"
+            onclick="goHome()">
+      ← Home
+    </button>
+
+    <div class="ludo-title">
+      🎲 FUN ARENA LUDO
+    </div>
+
+    <div id="turnText"
+         class="turn">
+      🔴 Red Turn
+    </div>
+
   </div>
+
 
   <div class="board-wrap">
 
-    <div class="board">
+    <div id="board"
+         class="board">
 
-      <!-- RED HOME -->
-      <div class="cell red home-area"
-           style="grid-column:1/7;grid-row:1/7;">
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
+      <!-- HOMES -->
+
+      <div class="home red-home">
+        <div class="home-slot" id="home-r-0"></div>
+        <div class="home-slot" id="home-r-1"></div>
+        <div class="home-slot" id="home-r-2"></div>
+        <div class="home-slot" id="home-r-3"></div>
       </div>
 
-      <!-- GREEN HOME -->
-      <div class="cell green home-area"
-           style="grid-column:10/16;grid-row:1/7;">
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
+      <div class="home green-home">
+        <div class="home-slot" id="home-g-0"></div>
+        <div class="home-slot" id="home-g-1"></div>
+        <div class="home-slot" id="home-g-2"></div>
+        <div class="home-slot" id="home-g-3"></div>
       </div>
 
-      <!-- BLUE HOME -->
-      <div class="cell blue home-area"
-           style="grid-column:1/7;grid-row:10/16;">
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
+      <div class="home blue-home">
+        <div class="home-slot" id="home-b-0"></div>
+        <div class="home-slot" id="home-b-1"></div>
+        <div class="home-slot" id="home-b-2"></div>
+        <div class="home-slot" id="home-b-3"></div>
       </div>
 
-      <!-- YELLOW HOME -->
-      <div class="cell yellow home-area"
-           style="grid-column:10/16;grid-row:10/16;">
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
-        <div class="home-dot"></div>
+      <div class="home yellow-home">
+        <div class="home-slot" id="home-y-0"></div>
+        <div class="home-slot" id="home-y-1"></div>
+        <div class="home-slot" id="home-y-2"></div>
+        <div class="home-slot" id="home-y-3"></div>
       </div>
-
-      <!-- CENTER -->
-      <div class="cell center"
-           style="grid-column:7/10;grid-row:7/10;"></div>
-
-      <!-- PATH GRID -->
-      <div class="cell path" style="grid-column:7;grid-row:1;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:1;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:1;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:2;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:2;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:3;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:3;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:3;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:4;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:4;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:4;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:5;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:5;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:5;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:6;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:6;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:6;"></div>
-
-      <div class="cell path" style="grid-column:1;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:2;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:3;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:4;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:5;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:6;grid-row:7;"></div>
-
-      <div class="cell path" style="grid-column:10;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:11;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:12;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:13;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:14;grid-row:7;"></div>
-      <div class="cell path" style="grid-column:15;grid-row:7;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:10;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:10;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:10;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:11;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:11;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:11;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:12;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:12;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:12;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:13;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:13;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:13;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:14;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:14;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:14;"></div>
-
-      <div class="cell path" style="grid-column:7;grid-row:15;"></div>
-      <div class="cell path" style="grid-column:8;grid-row:15;"></div>
-      <div class="cell path" style="grid-column:9;grid-row:15;"></div>
-
-      <!-- START CELLS -->
-      <div class="cell red" style="grid-column:6;grid-row:7;"></div>
-      <div class="cell green" style="grid-column:10;grid-row:6;"></div>
-      <div class="cell yellow" style="grid-column:10;grid-row:10;"></div>
-      <div class="cell blue" style="grid-column:6;grid-row:10;"></div>
 
     </div>
+
   </div>
+
 
   <div class="ludo-controls">
 
-    <div id="dice" class="dice-box">⚀</div>
+    <div id="dice"
+         class="dice-box">
+      ⚀
+    </div>
 
-    <button class="roll" onclick="rollDice()">
+    <button id="rollBtn"
+            class="roll"
+            onclick="rollDice()">
       🎲 ROLL DICE
     </button>
 
-    <div id="message" class="message">
-      Red player: Roll the dice.
+    <div id="message"
+         class="message">
+      🔴 Red: Roll the dice.
     </div>
 
   </div>
 
+
   <div class="player-list">
 
-    <div id="p0" class="player active">
-      🔴 RED<br>Player 1
+    <div id="p0"
+         class="player active">
+      🔴 RED<br>
+      Player 1
     </div>
 
-    <div id="p1" class="player">
-      🟢 GREEN<br>Player 2
+    <div id="p1"
+         class="player">
+      🟢 GREEN<br>
+      Player 2
     </div>
 
-    <div id="p2" class="player">
-      🟡 YELLOW<br>Player 3
+    <div id="p2"
+         class="player">
+      🟡 YELLOW<br>
+      Player 3
     </div>
 
-    <div id="p3" class="player">
-      🔵 BLUE<br>Player 4
+    <div id="p3"
+         class="player">
+      🔵 BLUE<br>
+      Player 4
     </div>
+
+  </div>
+
+</div>
+
+
+<!-- WINNER -->
+
+<div id="winner"
+     class="winner-box hidden">
+
+  <div class="winner-card">
+
+    <div class="big">🏆</div>
+
+    <h2 id="winnerText">
+      Winner!
+    </h2>
+
+    <p>
+      Congratulations!
+    </p>
+
+    <button onclick="newGame()">
+      🎮 PLAY AGAIN
+    </button>
+
+    <button onclick="goHome()"
+            style="margin-left:5px">
+      🏠 HOME
+    </button>
 
   </div>
 
@@ -871,122 +1052,853 @@ button{
 
 <script>
 
-let currentPlayer = 0;
-let rolling = false;
+/* ================= LUDO DATA ================= */
 
 const players = [
-  {name:"Red",emoji:"🔴"},
-  {name:"Green",emoji:"🟢"},
-  {name:"Yellow",emoji:"🟡"},
-  {name:"Blue",emoji:"🔵"}
+
+  {
+    name:"Red",
+    emoji:"🔴",
+    color:"red",
+    start:0,
+    cls:"red-piece",
+    lane:[
+      [1,7],
+      [2,7],
+      [3,7],
+      [4,7],
+      [5,7]
+    ]
+  },
+
+  {
+    name:"Green",
+    emoji:"🟢",
+    color:"green",
+    start:13,
+    cls:"green-piece",
+    lane:[
+      [7,13],
+      [7,12],
+      [7,11],
+      [7,10],
+      [7,9]
+    ]
+  },
+
+  {
+    name:"Yellow",
+    emoji:"🟡",
+    color:"yellow",
+    start:26,
+    cls:"yellow-piece",
+    lane:[
+      [13,7],
+      [12,7],
+      [11,7],
+      [10,7],
+      [9,7]
+    ]
+  },
+
+  {
+    name:"Blue",
+    emoji:"🔵",
+    color:"blue",
+    start:39,
+    cls:"blue-piece",
+    lane:[
+      [7,1],
+      [7,2],
+      [7,3],
+      [7,4],
+      [7,5]
+    ]
+  }
+
 ];
 
-const diceFaces = [
-  "⚀","⚁","⚂","⚃","⚄","⚅"
+
+/* 52 MAIN TRACK CELLS */
+
+const track = [
+
+ [6,1],[6,2],[6,3],[6,4],[6,5],
+ [5,6],[4,6],[3,6],[2,6],[1,6],
+ [0,6],[0,7],[0,8],
+ [1,8],[2,8],[3,8],[4,8],[5,8],
+ [6,9],[6,10],[6,11],[6,12],[6,13],[6,14],
+ [7,14],
+ [8,14],[8,13],[8,12],[8,11],[8,10],[8,9],
+ [9,8],[10,8],[11,8],[12,8],[13,8],[14,8],
+ [14,7],[14,6],
+ [13,6],[12,6],[11,6],[10,6],[9,6],
+ [8,5],[8,4],[8,3],[8,2],[8,1],[8,0],
+ [7,0],
+ [6,0]
+
 ];
 
-function openLudo(){
 
-  document.getElementById("homeScreen")
+/* SAFE CELLS */
+
+const safeIndexes = [
+  0,8,13,21,26,34,39,47
+];
+
+
+/* GAME STATE */
+
+let currentPlayer = 0;
+
+let diceValue = 0;
+
+let rolling = false;
+
+let canMove = false;
+
+let pieces = [];
+
+let gameStarted = false;
+
+
+/* ================= START ================= */
+
+function startLudo(){
+
+  document
+    .getElementById("homeScreen")
     .classList.add("hidden");
 
-  document.getElementById("ludoScreen")
+  document
+    .getElementById("ludoScreen")
+    .classList.remove("hidden");
+
+  window.scrollTo(0,0);
+
+  newGame();
+
+}
+
+
+/* ================= HOME ================= */
+
+function goHome(){
+
+  document
+    .getElementById("winner")
+    .classList.add("hidden");
+
+  document
+    .getElementById("ludoScreen")
+    .classList.add("hidden");
+
+  document
+    .getElementById("homeScreen")
     .classList.remove("hidden");
 
   window.scrollTo(0,0);
 
 }
 
-function closeLudo(){
 
-  document.getElementById("ludoScreen")
+/* ================= NEW GAME ================= */
+
+function newGame(){
+
+  document
+    .getElementById("winner")
     .classList.add("hidden");
 
-  document.getElementById("homeScreen")
-    .classList.remove("hidden");
+  currentPlayer=0;
 
-  window.scrollTo(0,0);
+  diceValue=0;
+
+  rolling=false;
+
+  canMove=false;
+
+  gameStarted=true;
+
+  pieces=[];
+
+  for(let p=0;p<4;p++){
+
+    pieces[p]=[];
+
+    for(let i=0;i<4;i++){
+
+      pieces[p].push({
+        step:-1,
+        id:p+"-"+i
+      });
+
+    }
+
+  }
+
+  createBoard();
+
+  renderPieces();
+
+  updateTurn();
+
+  document
+    .getElementById("dice")
+    .textContent="⚀";
+
+  document
+    .getElementById("message")
+    .textContent="🔴 Red: Roll the dice.";
 
 }
 
-function rollDice(){
 
-  if(rolling) return;
+/* ================= BOARD ================= */
 
-  rolling=true;
+function createBoard(){
 
-  const dice=document.getElementById("dice");
-  const message=document.getElementById("message");
+  const board=document.getElementById("board");
 
-  let count=0;
+  board
+    .querySelectorAll(".generated")
+    .forEach(el=>el.remove());
 
-  const animation=setInterval(()=>{
 
-    const random=Math.floor(Math.random()*6);
+  /* MAIN TRACK */
 
-    dice.textContent=diceFaces[random];
+  track.forEach((pos,index)=>{
 
-    count++;
+    const cell=document.createElement("div");
 
-    if(count>=10){
+    cell.className=
+      "cell generated path";
 
-      clearInterval(animation);
+    cell.style.gridRow=
+      (pos[0]+1);
 
-      const value=Math.floor(Math.random()*6)+1;
+    cell.style.gridColumn=
+      (pos[1]+1);
 
-      dice.textContent=diceFaces[value-1];
+    if(index%4===0){
 
-      message.textContent=
-        players[currentPlayer].emoji+" "+
-        players[currentPlayer].name+
-        " rolled "+value+"!";
+      cell.classList.add(
+        players[index/13].color+"-path"
+      );
 
-      rolling=false;
+    }
 
-      if(value!==6){
+    if(safeIndexes.includes(index)){
 
-        setTimeout(nextTurn,900);
+      cell.classList.add("safe");
+
+    }
+
+    board.appendChild(cell);
+
+  });
+
+
+  /* HOME LANES */
+
+  players.forEach((player,p)=>{
+
+    player.lane.forEach((pos,i)=>{
+
+      const cell=document.createElement("div");
+
+      cell.className=
+        "cell generated lane-"+player.color;
+
+      cell.style.gridRow=
+        (pos[0]+1);
+
+      cell.style.gridColumn=
+        (pos[1]+1);
+
+      board.appendChild(cell);
+
+    });
+
+  });
+
+
+  /* CENTER */
+
+  const center=document.createElement("div");
+
+  center.className=
+    "cell generated center";
+
+  center.style.gridRow="7 / 10";
+
+  center.style.gridColumn="7 / 10";
+
+  board.appendChild(center);
+
+}
+
+
+/* ================= POSITION ================= */
+
+function getPosition(playerIndex,step){
+
+  const player=players[playerIndex];
+
+  if(step<0){
+
+    return null;
+
+  }
+
+  if(step<52){
+
+    const index=
+      (player.start+step)%52;
+
+    return track[index];
+
+  }
+
+  if(step<57){
+
+    return player.lane[step-52];
+
+  }
+
+  return [7,7];
+
+}
+
+
+/* ================= RENDER ================= */
+
+function renderPieces(){
+
+  document
+    .querySelectorAll(".piece")
+    .forEach(el=>el.remove());
+
+
+  for(let p=0;p<4;p++){
+
+    for(let i=0;i<4;i++){
+
+      const piece=
+        pieces[p][i];
+
+      const pos=
+        getPosition(p,piece.step);
+
+      const el=
+        document.createElement("div");
+
+      el.className=
+        "piece "+players[p].cls;
+
+      el.dataset.player=p;
+
+      el.dataset.piece=i;
+
+      el.textContent=i+1;
+
+
+      if(piece.step===-1){
+
+        const homeSlot=
+          document.getElementById(
+            "home-"+getLetter(p)+"-"+i
+          );
+
+        homeSlot.appendChild(el);
 
       }else{
 
-        message.textContent +=
-          " 🎉 Roll again!";
+        const cell=
+          findCell(pos[0],pos[1]);
+
+        if(cell){
+
+          cell.appendChild(el);
+
+        }
+
+      }
+
+      if(
+        p===currentPlayer &&
+        canMove &&
+        isValidMove(p,i)
+      ){
+
+        el.classList.add("selectable");
+
+        el.onclick=function(e){
+
+          e.stopPropagation();
+
+          movePiece(p,i);
+
+        };
 
       }
 
     }
 
-  },100);
+  }
 
 }
 
-function nextTurn(){
 
-  currentPlayer++;
+/* ================= FIND CELL ================= */
 
-  if(currentPlayer>=players.length){
-    currentPlayer=0;
+function findCell(row,col){
+
+  const cells=
+    document.querySelectorAll(
+      "#board .generated"
+    );
+
+  for(const cell of cells){
+
+    if(
+      parseInt(cell.style.gridRow)===row+1 &&
+      parseInt(cell.style.gridColumn)===col+1
+    ){
+
+      return cell;
+
+    }
+
   }
 
-  document.querySelectorAll(".player")
-    .forEach(p=>p.classList.remove("active"));
+  return null;
 
-  document.getElementById("p"+currentPlayer)
-    .classList.add("active");
+}
+
+
+/* ================= LETTER ================= */
+
+function getLetter(p){
+
+  return ["r","g","y","b"][p];
+
+}
+
+
+/* ================= VALID MOVE ================= */
+
+function isValidMove(p,i){
+
+  const piece=
+    pieces[p][i];
+
+  if(diceValue===0){
+    return false;
+  }
+
+  if(piece.step===57){
+    return false;
+  }
+
+  if(piece.step===-1){
+
+    return diceValue===6;
+
+  }
+
+  return piece.step+diceValue<=57;
+
+}
+
+
+/* ================= ROLL ================= */
+
+function rollDice(){
+
+  if(
+    rolling ||
+    canMove ||
+    !gameStarted
+  ){
+
+    return;
+
+  }
+
+  rolling=true;
+
+  const dice=
+    document.getElementById("dice");
+
+  const button=
+    document.getElementById("rollBtn");
+
+  button.disabled=true;
+
+  let count=0;
+
+  const animation=
+    setInterval(()=>{
+
+      const r=
+        Math.floor(Math.random()*6);
+
+      dice.textContent=
+        ["⚀","⚁","⚂","⚃","⚄","⚅"][r];
+
+      count++;
+
+      if(count>=10){
+
+        clearInterval(animation);
+
+        diceValue=
+          Math.floor(Math.random()*6)+1;
+
+        dice.textContent=
+          ["⚀","⚁","⚂","⚃","⚄","⚅"]
+          [diceValue-1];
+
+        rolling=false;
+
+        handleRoll();
+
+      }
+
+    },80);
+
+}
+
+
+/* ================= HANDLE ROLL ================= */
+
+function handleRoll(){
 
   const p=players[currentPlayer];
 
-  document.getElementById("turnText")
-    .textContent=p.emoji+" "+p.name+" Turn";
+  const valid=[];
 
-  document.getElementById("message")
+  for(let i=0;i<4;i++){
+
+    if(isValidMove(currentPlayer,i)){
+
+      valid.push(i);
+
+    }
+
+  }
+
+  if(valid.length===0){
+
+    document
+      .getElementById("message")
+      .textContent=
+        p.emoji+" "+p.name+
+        " rolled "+diceValue+
+        ". No move available.";
+
+    setTimeout(()=>{
+
+      if(diceValue!==6){
+
+        nextTurn();
+
+      }else{
+
+        resetRoll();
+
+      }
+
+    },1000);
+
+    return;
+
+  }
+
+
+  canMove=true;
+
+  document
+    .getElementById("message")
     .textContent=
-    p.emoji+" "+p.name+
-    " player: Roll the dice.";
+      p.emoji+" "+p.name+
+      " rolled "+diceValue+
+      ". Tap a glowing piece.";
+
+  renderPieces();
 
 }
+
+
+/* ================= MOVE ================= */
+
+function movePiece(p,i){
+
+  if(
+    !canMove ||
+    p!==currentPlayer ||
+    !isValidMove(p,i)
+  ){
+
+    return;
+
+  }
+
+  const piece=
+    pieces[p][i];
+
+  if(piece.step===-1){
+
+    piece.step=0;
+
+  }else{
+
+    piece.step+=diceValue;
+
+  }
+
+  canMove=false;
+
+  renderPieces();
+
+  const player=
+    players[p];
+
+  checkCapture(p,i);
+
+  renderPieces();
+
+  if(checkWin(p)){
+
+    showWinner(player);
+
+    return;
+
+  }
+
+
+  document
+    .getElementById("message")
+    .textContent=
+      player.emoji+" "+player.name+
+      " moved "+diceValue+" steps.";
+
+
+  if(diceValue===6){
+
+    setTimeout(()=>{
+
+      resetRoll();
+
+    },700);
+
+  }else{
+
+    setTimeout(()=>{
+
+      nextTurn();
+
+    },900);
+
+  }
+
+}
+
+
+/* ================= CAPTURE ================= */
+
+function checkCapture(p,i){
+
+  const moved=
+    pieces[p][i];
+
+  if(
+    moved.step<0 ||
+    moved.step>=52
+  ){
+
+    return;
+
+  }
+
+  const player=
+    players[p];
+
+  const globalIndex=
+    (player.start+moved.step)%52;
+
+  if(safeIndexes.includes(globalIndex)){
+
+    return;
+
+  }
+
+  for(let op=0;op<4;op++){
+
+    if(op===p) continue;
+
+    for(let oi=0;oi<4;oi++){
+
+      const other=
+        pieces[op][oi];
+
+      if(
+        other.step<0 ||
+        other.step>=52
+      ){
+
+        continue;
+
+      }
+
+      const otherIndex=
+        (players[op].start+
+         other.step)%52;
+
+      if(
+        otherIndex===
+        globalIndex
+      ){
+
+        other.step=-1;
+
+        document
+          .getElementById("message")
+          .textContent=
+            player.emoji+" "+player.name+
+            " captured "+players[op].name+
+            "! 🎯";
+
+      }
+
+    }
+
+  }
+
+}
+
+
+/* ================= WIN ================= */
+
+function checkWin(p){
+
+  return pieces[p]
+    .every(piece=>piece.step===57);
+
+}
+
+
+/* ================= WINNER ================= */
+
+function showWinner(player){
+
+  document
+    .getElementById("winnerText")
+    .textContent=
+      player.emoji+
+      " "+player.name+
+      " WINS!";
+
+  document
+    .getElementById("winner")
+    .classList.remove("hidden");
+
+}
+
+
+/* ================= NEXT TURN ================= */
+
+function nextTurn(){
+
+  diceValue=0;
+
+  canMove=false;
+
+  currentPlayer++;
+
+  if(currentPlayer>=4){
+
+    currentPlayer=0;
+
+  }
+
+  updateTurn();
+
+  renderPieces();
+
+}
+
+
+/* ================= SIX AGAIN ================= */
+
+function resetRoll(){
+
+  diceValue=0;
+
+  canMove=false;
+
+  document
+    .getElementById("rollBtn")
+    .disabled=false;
+
+  const p=
+    players[currentPlayer];
+
+  document
+    .getElementById("message")
+    .textContent=
+      p.emoji+" "+p.name+
+      ": You rolled 6! Roll again.";
+
+}
+
+
+/* ================= TURN UI ================= */
+
+function updateTurn(){
+
+  players.forEach((p,i)=>{
+
+    document
+      .getElementById("p"+i)
+      .classList.toggle(
+        "active",
+        i===currentPlayer
+      );
+
+  });
+
+  const p=
+    players[currentPlayer];
+
+  document
+    .getElementById("turnText")
+    .textContent=
+      p.emoji+" "+p.name+" Turn";
+
+  document
+    .getElementById("message")
+    .textContent=
+      p.emoji+" "+p.name+
+      ": Roll the dice.";
+
+  document
+    .getElementById("rollBtn")
+    .disabled=false;
+
+}
+
+
+/* ================= START ================= */
+
+window.onload=function(){
+
+  startLudo();
+
+};
 
 </script>
 
 </body>
-                              </html>
+</html>
